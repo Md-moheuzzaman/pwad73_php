@@ -22,5 +22,4 @@
     $myarr = array("volvo", 15,["apples", "bananas"]);
     print_r($myarr);
 
-?>
-
+?> 
