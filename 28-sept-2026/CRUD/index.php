@@ -7,9 +7,11 @@ include_once("dbconfig.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student List</title>
+   <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h3>Student List</h3>
+    <a href="student_entry.php">New Entry</a> <br> <br>
     
     <?php 
        $rawData = $conn->query("SELECT * FROM students"); ?>
@@ -21,6 +23,7 @@ include_once("dbconfig.php");
         <th>Emial</th>
         <th>Phone</th>
         <th>Action</th>
+        
     <?php
        while($row = $rawData->fetch_assoc()){ ?>
     
@@ -30,6 +33,14 @@ include_once("dbconfig.php");
        <td> <?php echo $row['address']. "<br>";?></td>
        <td> <?php echo $row['email']. "<br>";?></td>
        <td> <?php echo $row['phone']. "<br>";?></td>
+       <td class="action">
+         <a href="#">Edit</a>
+          | 
+         
+         <a onclick="return confirm('Sure to Delete')" class="danger" 
+         
+         href="student_delete.php?id=<?php echo $row['id'] ?>" >Delete</a>
+         </td>
 
        </tr>
        
@@ -38,6 +49,7 @@ include_once("dbconfig.php");
 
        }
     ?>
+    <a href="index.php">Back To Student List</a>
     </table>
 </body>
 </html>

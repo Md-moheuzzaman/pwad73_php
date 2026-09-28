@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap');
+
+:root {
+    color-scheme: light;
+    font-family: 'DM Sans', sans-serif;
+    color: #202a2b;
+    background: #f2f6f4;
+    font-synthesis: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: min(100% - 40px, 980px);
+    margin: 64px auto;
+    padding: 36px;
+    background: #fff;
+    border: 1px solid #dfe8e3;
+    border-radius: 8px;
+    box-shadow: 0 18px 50px rgb(33 62 51 / 8%);
+}
+
+h3 {
+    margin: 0 0 24px;
+    color: #183c35;
+    font-family: 'Manrope', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+}
+
+a {
+    color: #087f68;
+    font-weight: 600;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+
+a:hover {
+    color: #b4512b;
+}
+
+body > a:first-of-type {
+    display: inline-block;
+    margin-bottom: 22px;
+    padding: 10px 16px;
+    border-radius: 5px;
+    background: #087f68;
+    color: #fff;
+    text-decoration: none;
+}
+
+body > a:first-of-type:hover {
+    background: #066653;
+}
+
+table {
+    width: 100%;
+    border: 0;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 14px 16px;
+    border: 0;
+    border-bottom: 1px solid #e5ece8;
+}
+
+th {
+    background: #eaf3ef;
+    color: #31564d;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+td {
+    color: #465653;
+    overflow-wrap: anywhere;
+}
+
+tr:hover td {
+    background: #f8fbf9;
+}
+
+form {
+    display: grid;
+    max-width: 540px;
+    gap: 12px;
+    margin: 0 0 24px;
+}
+
+form input {
+    width: 100%;
+    min-height: 46px;
+    padding: 11px 13px;
+    border: 1px solid #cbd8d1;
+    border-radius: 5px;
+    background: #fff;
+    color: #202a2b;
+    font: inherit;
+}
+
+form input:focus {
+    border-color: #087f68;
+    outline: 3px solid rgb(8 127 104 / 15%);
+}
+
+form input[type='submit'] {
+    width: auto;
+    justify-self: start;
+    min-width: 110px;
+    border-color: #b4512b;
+    background: #b4512b;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+form input[type='submit']:hover {
+    border-color: #963e20;
+    background: #963e20;
+}
+
+@media (max-width: 640px) {
+    body {
+        width: min(100% - 24px, 980px);
+        margin: 20px auto;
+        padding: 22px 16px;
+    }
+
+    h3 {
+        font-size: 22px;
+    }
+
+    table {
+        font-size: 13px;
+    }
+
+    th,
+    td {
+        padding: 10px 8px;
+    }
+}
