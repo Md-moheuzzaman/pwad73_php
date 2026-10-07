@@ -23,11 +23,11 @@
 </head>
 
 <body>
-
-  <?php 
-       $rawData = $conn->query("SELECT * FROM login"); ?>
+<?php include 'dbconfig.php' ?>;
+  
        
   <!--authentication-->
+
 
   <div class="mx-3 mx-lg-0">
 
@@ -55,16 +55,50 @@
             <p class="mb-0 fw-bold">OR</p>
             <div class="line"></div>
           </div>
+          <div class="alert border-0 bg-danger alert-dismissible fade show py-2">
+                <div class="d-flex align-items-center">
+                  <div class="fs-3 text-white"><span class="material-symbols-outlined">cancel</span>
+                  </div>
+                  <div class="ms-3">
+                    <div class="text-white">Wrong Password</div>
+                  </div>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+
+          <?php
+$loginError = false;
+
+if (isset($_POST['login'])) {
+    $email = $_POST['email'] ?? '';
+    $password = ($_POST['password'] ?? '');
+    
+    include_once('dbconfig.php');
+    $result = $conn->query("SELECT * FROM users WHERE email = '$email' AND password = '$password'");
+
+    if ($result && $result->num_rows > 0) {
+        session_start();
+        $_SESSION['email'] = $email;
+        $_SESSION['password'] =$password;
+        header('Location: dashboard.php');
+        exit;
+    }
+
+    $loginError = true;
+}
+?>
+
+
           <div class="form-body mt-4">
             <form class="row g-3">
               <div class="col-12">
                 <label for="inputEmailAddress" class="form-label">Email</label>
-                <input type="email" class="form-control" id="inputEmailAddress" placeholder="jhon@example.com">
+                <input type="email" name="email" class="form-control" id="inputEmailAddress" placeholder="jhon@example.com">
               </div>
               <div class="col-12">
                 <label for="inputChoosePassword" class="form-label">Password</label>
                 <div class="input-group" id="show_hide_password">
-                  <input type="password" class="form-control border-end-0" id="inputChoosePassword" value="12345678"
+                  <input type="password" name="password" class="form-control border-end-0" id="inputChoosePassword"
                     placeholder="Enter Password">
                   <a href="javascript:;" class="input-group-text bg-transparent"><i
                       class="bi bi-eye-slash-fill"></i></a>
@@ -80,7 +114,7 @@
               </div>
               <div class="col-12">
                 <div class="d-grid">
-                  <button type="submit" class="btn btn-primary">Login</button>
+                  <button type="submit" name="login" class="btn btn-primary">Login</button>
                 </div>
               </div>
               <div class="col-12">

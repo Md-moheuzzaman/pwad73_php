@@ -4,7 +4,7 @@
      $host = "localhost";
      $user = "root";
      $pass = "";
-     $db = "php_project_manual";
+     $db = "php_project_ai_db";
 
     $conn = mysqli_connect($host,$user,$pass,$db);
     //$conn = new mysqli("localhost","root","php_project_manual");

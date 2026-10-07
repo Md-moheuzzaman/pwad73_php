@@ -1,3 +1,7 @@
+<?php
+session_start();
+print_r(S_SESSION);
+?>
 <!doctype html>
 <html lang="en" data-bs-theme="dark">
   <head>
