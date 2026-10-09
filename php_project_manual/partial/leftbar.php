@@ -15,7 +15,11 @@
               <!--navigation-->
               <ul class="metismenu" id="menu">
                 <li>
+<<<<<<< HEAD
                   <a href="dashboard.php">
+=======
+                  <a href="index.html">
+>>>>>>> f65120bbce5271b1afa17c98ecc827563d2c9a2f
                     <div class="parent-icon"><span class="material-symbols-outlined">home</span>
                     </div>
                     <div class="menu-title">Dashboard</div>
@@ -30,11 +34,19 @@
           <div class="sidebar-bottom dropdown dropup-center dropup">
               <div class="dropdown-toggle d-flex align-items-center px-3 gap-3 w-100 h-100" data-bs-toggle="dropdown">
                 <div class="user-img">
+<<<<<<< HEAD
                    <img src="assets/images/profile.jpg" alt="">
                 </div>
                 <div class="user-info">
                   <h5 class="mb-0 user-name">Md.Moheuzzaman</h5>
                   <p class="mb-0 user-designation">Develpoer</p>
+=======
+                   <img src="assets/images/avatars/01.png" alt="">
+                </div>
+                <div class="user-info">
+                  <h5 class="mb-0 user-name">Jhon Maxwell</h5>
+                  <p class="mb-0 user-designation">UI Engineer</p>
+>>>>>>> f65120bbce5271b1afa17c98ecc827563d2c9a2f
                 </div>
               </div>
               <ul class="dropdown-menu dropdown-menu-end">

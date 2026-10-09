@@ -30,59 +30,33 @@
     <div class="">
       <div class="row g-0">
 
-        <div class="col-12 col-xl-7 col-xxl-8 auth-cover-left align-items-center justify-content-center d-none d-xl-flex bg-primary">
-
-          <div class="card rounded-0 mb-0 border-0 bg-transparent">
-            <div class="card-body">
-              <img src="assets/images/boxed-login.png" class="img-fluid auth-img-cover-login" width="650"
-                alt="">
+  <div class="card my-5 col-xl-9 col-xxl-8 mx-auto rounded-4 overflow-hidden border-3 p-3">
+    <div class="row g-3">
+      <div class="col-lg-6 d-flex">
+        <div class="card-body p-5 w-100">
+          <img src="assets/images/logo-icon.png" class="mb-4" width="45" alt="">
+          <h4 class="fw-bold">Get Started Now</h4>
+          <p class="mb-0">Enter your credentials to login your account</p>
+          <div class="row g-3 my-4">
+            <div class="col-12 col-lg-12">
+              <button
+                class="btn btn-light py-2 font-text1 fw-bold d-flex align-items-center justify-content-center w-100"><img
+                  src="assets/images/icons/google-2.png" width="18" class="me-2" alt="">Log In with Google</button>
+            </div>
+            <div class="col col-lg-12">
+              <button
+                class="btn btn-light py-2 font-text1 fw-bold d-flex align-items-center justify-content-center w-100"><img
+                  src="assets/images/icons/apple-logo.png" width="18" class="me-2" alt="">Log In with Apple</button>
             </div>
           </div>
-
-        </div>
-
-        <div class="col-12 col-xl-5 col-xxl-4 auth-cover-right align-items-center justify-content-center">
-          <div class="card rounded-0 m-3 mb-0 border-0">
-            <div class="card-body p-sm-5">
-              <img src="assets/images/logo-icon.png" class="mb-4" width="45" alt="">
-              <h4 class="fw-bold">Get Started Now</h4>
-              <p class="mb-0">Enter your credentials to login your account</p>
-
-              <div class="row g-3 my-4">
-                <div class="col-12 col-lg-6">
-                  <button class="btn btn-light py-2 border-3 font-text1 fw-bold d-flex align-items-center justify-content-center w-100"><img src="assets/images/icons/google-2.png" width="18" class="me-2" alt="">Log In with Google</button>
-                </div>
-                <div class="col col-lg-6">
-                  <button class="btn btn-light py-2 border-3 font-text1 fw-bold d-flex align-items-center justify-content-center w-100"><img src="assets/images/icons/apple-logo.png" width="18" class="me-2" alt="">Log In with Apple</button>
-                </div>
-              </div>
-
-              <div class="separator section-padding">
-                <div class="line"></div>
-                <p class="mb-0 fw-bold">OR</p>
-                <div class="line"></div>
-              </div>
-              <?php
-              if (isset($_POST['login'])) {
-                extract($_POST);
-                $password = md5($password);
-                include_once('dbconfig.php');
-                //echo "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
-                $result = $conn->query("SELECT * FROM login WHERE email = '$email' AND password = '$password'");
-
-                $row = $result->fetch_assoc();
-
-                if ($result->num_rows > 0) {
-                  session_start();
-                  $_SESSION['email'] = $email;
-                  $_SESSION['name'] = $row['name'];
-
-                  header("Location: dashboard.php");
-                } else {
-                  echo '
-                  <div class="alert border-0 bg-danger-subtle alert-dismissible fade show">
-                  <div class="d-flex align-items-center">
-                    <div class="text-danger">A simple danger alert—check it out!</div>
+          <div class="separator">
+            <div class="line"></div>
+            <p class="mb-0 fw-bold">OR</p>
+            <div class="line"></div>
+          </div>
+          <div class="alert border-0 bg-danger alert-dismissible fade show py-2">
+                <div class="d-flex align-items-center">
+                  <div class="fs-3 text-white"><span class="material-symbols-outlined">cancel</span>
                   </div>
                   </div>
                   ';
