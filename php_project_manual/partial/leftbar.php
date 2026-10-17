@@ -34,7 +34,7 @@
                 </div>
                 <div class="user-info">
                   <h5 class="mb-0 user-name">Md.Moheuzzaman</h5>
-                  <p class="mb-0 user-designation">Develpoer</p>
+                  <p class="mb-0 user-designation">Developer</p>
                 </div>
               </div>
               <ul class="dropdown-menu dropdown-menu-end">

@@ -1,5 +1,11 @@
 <?php
 session_start();
+if(!isset($_SESSION['email'])){
+header("Location: index.php");
+}
+if($_SERVER['role'] != 'admin'){
+  header("Loction: unauthorize.php");
+}
 
 ?>
 <!doctype html>
@@ -7,7 +13,7 @@ session_start();
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PHP Project Manual</title>
+    <title>Admin Dashboard</title>
  <?php 
    include 'partial/home_styles.php';
   ?>

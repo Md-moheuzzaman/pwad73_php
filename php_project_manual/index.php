@@ -65,10 +65,15 @@
               <?php
               if (isset($_POST['login'])) {
                 extract($_POST);
-                $password = md5($password);
+                $password = sha1($password);
+
+                
+                //$password = password_hash($password, PASSWORD_DEFAULT);
+
+
                 include_once('dbconfig.php');
                 //echo "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
-                $result = $conn->query("SELECT * FROM login WHERE email = '$email' AND password = '$password'");
+                $result = $conn->query("SELECT * FROM users WHERE email = '$email' AND password = '$password'");
 
                 $row = $result->fetch_assoc();
 
@@ -76,8 +81,20 @@
                   session_start();
                   $_SESSION['email'] = $email;
                   $_SESSION['name'] = $row['name'];
+                  $_SESSION['role'] = $row['role'];
 
-                  header("Location: dashboard.php");
+                  if($row['role']=='admin'){
+                    $_SESSION['url'] = 'dashboard_admin.php';
+                      header("Location: dashboard_admin.php");
+                  }else if($row['role'] == 'customer'){
+                    $_SESSION['url'] = 'dashboard_customer.php';
+                    header("Location: dashboard_customer.php");
+                  }else if ($row['role'] == 'staff'){
+                    $_SESSION['url'] = 'dashboard_staff.php';
+                    header("Location: dashboard_staff.php");
+                  }
+
+                  header("Location: dashboard_admin.php");
                 } else {
                   echo '
                   <div class="alert border-0 bg-danger-subtle alert-dismissible fade show">
