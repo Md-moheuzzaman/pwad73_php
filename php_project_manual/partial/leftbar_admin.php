@@ -15,12 +15,28 @@
               <!--navigation-->
               <ul class="metismenu" id="menu">
                 <li>
-                  <a href="dashboard.php">
+                  <a href="dashboard_admin.php">
                     <div class="parent-icon"><span class="material-symbols-outlined">home</span>
                     </div>
                     <div class="menu-title">Dashboard</div>
                   </a>
                 </li>
+                <!-- <li class="menu-label">UI Elements</li> -->
+      <li>
+        <a href="javascript:;" class="has-arrow">
+          <div class="parent-icon"><span class="material-symbols-outlined">widgets</span>
+          </div>
+          <div class="menu-title">New service</div>
+        </a>
+        <ul>
+          <li> <a href="new_service.php"><span class="material-symbols-outlined">arrow_right</span>New Service</a>
+          </li>
+          <li> <a href="services.php"><span class="material-symbols-outlined">arrow_right</span>Manage Services</a>
+          </li>
+        </ul>
+      </li>
+
+    </ul>
                
               </ul>
               <!--end navigation-->
@@ -50,6 +66,7 @@
                   dashboard
                   </span><span>Dashboard</span></a>
                 </li>
+                
                 <li><a class="dropdown-item" href="javascript:;"><span class="material-symbols-outlined me-2">
                   account_balance
                   </span><span>Earnings</span></a>
@@ -65,6 +82,8 @@
                   logout
                   </span><span>Logout</span></a>
                 </li>
+                
               </ul>
+              
           </div>
      </aside>

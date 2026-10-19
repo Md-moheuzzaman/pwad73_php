@@ -1,12 +1,12 @@
 <?php
 session_start();
-if(!isset($_SESSION['email'])){
-header("Location: index.php");
-}
-if($_SERVER['role'] != 'admin'){
-  header("Loction: unauthorize.php");
+if (!isset($_SESSION['email'])) {
+  header("Location: index.php");
 }
 
+if ($_SESSION['role'] != 'admin') {
+  header("Location: unauthorize.php");
+}
 ?>
 <!doctype html>
 <html lang="en" data-bs-theme="dark">
@@ -27,7 +27,7 @@ if($_SERVER['role'] != 'admin'){
 
 
      <!--start sidebar-->
-       <?php include 'partial/leftbar.php'; ?>
+       <?php include 'partial/leftbar_admin.php'; ?>
      <!--end sidebar-->
 
 
@@ -106,10 +106,24 @@ if($_SERVER['role'] != 'admin'){
               </div>
             </div>
             
+            
           </div>
           
+          
          </div>
+         
          <div class="card-body">
+          <div class="row">
+          <div class="col-lg-12">
+            <div class="card">
+              <div class="card-header bg-transparent">
+                <div class="d-flex align-items-center">
+                  <div class="">
+                    <h6 class="mb-0 fw-bold">Admin Dashboard</h6>
+                  </div>
+                </div>
+              </div>      
+             <div class="card-body">
               <img  class="img-fluid" src="assets/images/welcome_dashboard_web_cover_851x315.jpg" alt="Dashboard_image">
       </div><!--end row-->
 
